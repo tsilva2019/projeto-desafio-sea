@@ -11,8 +11,8 @@ interface ButtonCurrentProps extends ButtonProps {
 }
 const Button = ({ margin, height, background, color, ...props }: ButtonCurrentProps) => {
   return (
-    <BoxInput>
-      <ButtonStyled style={{ margin, height, background, color }} {...props} />;
+    <BoxInput style={{ margin }}>
+      <ButtonStyled style={{ height, background, color }} {...props} />
     </BoxInput>
   );
 };

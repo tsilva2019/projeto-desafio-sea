@@ -11,9 +11,9 @@ interface InputProps extends InputPropsAntd {
 }
 const InputText = ({ label, margin, height, background, color }: InputProps) => {
   return (
-    <BoxInput>
+    <BoxInput style={{ margin }}>
       {label && <LabelInput>{label}</LabelInput>}
-      <InputTextStyled style={{ margin, height, background, color }} />
+      <InputTextStyled style={{ height, background, color }} />
     </BoxInput>
   );
 };

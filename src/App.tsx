@@ -17,9 +17,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <InputText label="Nome" />
-        <InputText label="CPF" />
-        <Button height="36px" background="#4FA1C1" color="white">
+        <InputText margin="0 0 12px 0" label="Nome" />
+        <InputText margin="0 0 12px 0" label="CPF" />
+        <Button margin="0 0 12px 0" height="36px" background="#4FA1C1" color="white">
           Salvar
         </Button>
       </div>
