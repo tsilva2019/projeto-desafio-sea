@@ -1,7 +1,6 @@
 import { ButtonProps } from 'antd';
 
-import { BoxInput } from '../../inputs/inputText/inputText.styles';
-import { ButtonStyled } from './button.styles';
+import { BoxButton, ButtonStyled } from './button.styles';
 
 interface ButtonCurrentProps extends ButtonProps {
   margin?: string;
@@ -11,9 +10,9 @@ interface ButtonCurrentProps extends ButtonProps {
 }
 const Button = ({ margin, height, background, color, ...props }: ButtonCurrentProps) => {
   return (
-    <BoxInput style={{ margin }}>
+    <BoxButton style={{ margin }}>
       <ButtonStyled style={{ height, background, color }} {...props} />
-    </BoxInput>
+    </BoxButton>
   );
 };
 

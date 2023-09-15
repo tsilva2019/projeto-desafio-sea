@@ -1,0 +1,35 @@
+.container {
+  width: 97%;
+  height: auto;
+  border: 1px solid #4fa1c1;
+  border-radius: 10px;
+  margin: 8px 0;
+  padding: 10px;
+  align-items: center;
+}
+
+.container-cards {
+  display: flex;
+}
+.container-col {
+  margin: 0px 8px;
+}
+
+.sider {
+  max-width: '58px';
+  flex: '0 0 58px';
+  min-width: '58px';
+  width: '58px';
+  background: '#4fa1c1';
+}
+.text-form {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #3a3a3a;
+  margin: 8px 0px;
+}
+
+.section-epi {
+  display: flex;
+}

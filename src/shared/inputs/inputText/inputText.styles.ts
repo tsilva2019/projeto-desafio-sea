@@ -1,9 +1,8 @@
-import { Typography } from 'antd';
+import { Input, Typography } from 'antd';
 import styled from 'styled-components';
 const { Text } = Typography;
 export const BoxInput = styled.div`
   width: 100%;
-  max-width: 338px;
   height: auto;
   margin-bottom: 12px;
 `;
@@ -16,7 +15,7 @@ export const LabelInput = styled(Text)`
   margin: 8px 0px;
 `;
 
-export const InputTextStyled = styled.input.attrs({ type: 'text' })`
+export const InputTextStyled = styled(Input)`
   width: 100%;
   height: 36px;
   color: #4f4f4f;
