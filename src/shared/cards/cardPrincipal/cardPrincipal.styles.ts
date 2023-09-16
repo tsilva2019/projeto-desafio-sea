@@ -1,5 +1,6 @@
 import { Card } from 'antd';
 import styled from 'styled-components';
+
 export const BoxCard = styled.div`
   width: 100%;
   height: auto;

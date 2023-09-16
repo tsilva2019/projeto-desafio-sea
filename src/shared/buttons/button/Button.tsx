@@ -5,13 +5,14 @@ import { BoxButton, ButtonStyled } from './button.styles';
 interface ButtonCurrentProps extends ButtonProps {
   margin?: string;
   height?: string;
+  width?: string;
   background?: string;
   color?: string;
 }
-const Button = ({ margin, height, background, color, ...props }: ButtonCurrentProps) => {
+const Button = ({ margin, height, width, background, color, ...props }: ButtonCurrentProps) => {
   return (
-    <BoxButton style={{ margin }}>
-      <ButtonStyled style={{ height, background, color }} {...props} />
+    <BoxButton style={{ margin, width }}>
+      <ButtonStyled style={{ height, width, background, color }} {...props} />
     </BoxButton>
   );
 };

@@ -6,15 +6,16 @@ interface SwitchProps extends SwitchPropsAntd {
   height?: string;
   background?: string;
   color?: string;
+  margin?: string;
 }
-const SwitchDefault = ({ height, background, color, ...props }: SwitchProps) => {
+const SwitchDefault = ({ height, background, color, margin, ...props }: SwitchProps) => {
   return (
-    <BoxSwitch>
+    <BoxSwitch style={{ margin }}>
       <ConfigProvider
         theme={{
           components: {
-            Select: {
-              multipleItemBorderColor: '#4fa1c1',
+            Switch: {
+              colorPrimary: '#4fa1c1',
             },
           },
         }}
