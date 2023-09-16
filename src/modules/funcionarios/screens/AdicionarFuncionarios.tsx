@@ -1,10 +1,12 @@
 import { UploadOutlined } from '@ant-design/icons';
-import { Checkbox, Col, Form, Row } from 'antd';
+import { Checkbox, Col, Row } from 'antd';
 import { useState } from 'react';
 
 import Button from '../../../shared/buttons/button/Button';
 import CardPrincipal from '../../../shared/cards/cardPrincipal/CardPrincipal';
+import { LimitedForm } from '../../../shared/delimitadores/delimitadores.styles';
 import InputText from '../../../shared/inputs/inputText/InputText';
+import { LabelInput } from '../../../shared/inputs/inputText/inputText.styles';
 import RadioDefault from '../../../shared/inputs/radiogroup/radio/RadioDefault';
 import SelectDefault from '../../../shared/inputs/select/SelectDefault';
 import SwitchDefault from '../../../shared/inputs/switch/SwitchDefault';
@@ -14,7 +16,7 @@ const AdicionarFuncionario = () => {
   const [fileList, setFileList] = useState('');
   return (
     <CardPrincipal title="Adicionar Funcionário" headerBg="#4FA1C1" style={{ maxWidth: '850px' }}>
-      <Form layout="vertical">
+      <LimitedForm>
         <div className="container">
           <Row>
             <Col span={12}>
@@ -71,6 +73,7 @@ const AdicionarFuncionario = () => {
             />
             <div className="section-epi">
               <SelectDefault
+                width="350px"
                 margin="8px 0 0 0"
                 label="Selecione o EPI:"
                 optionsSelect={[
@@ -89,16 +92,16 @@ const AdicionarFuncionario = () => {
                 ]}
               />
 
-              <InputText label="Informe o número do CA:" margin="8px 0 0 8px" />
+              <InputText label="Informe o número do CA:" width="250px" margin="8px 0 0 8px" />
               <a>Adicionar EPI</a>
             </div>
-            <Button margin="8px 0 12px 0" height="36px" background="none" color="#3A3A3A">
-              Adicionar outra Atividade
-            </Button>
           </div>
+          <Button margin="8px 0 12px 0" height="36px" background="none" color="#3A3A3A">
+            Adicionar outra Atividade
+          </Button>
         </div>
         <div className="container">
-          <p>Adicione Atestado de Saúde Ocupacional (opcional):</p>
+          <LabelInput>Adicione Atestado de Saúde Ocupacional (opcional):</LabelInput>
           <InputText value={fileList} style={{ maxWidth: '100%' }} />
           <UploadButton
             beforeUpload={(file) => {
@@ -110,10 +113,12 @@ const AdicionarFuncionario = () => {
             <Button icon={<UploadOutlined />}>Selecionar arquivo</Button>
           </UploadButton>
         </div>
-        <Button margin="0 0 12px 0" height="36px" background="none" color="#3A3A3A">
-          Salvar
-        </Button>
-      </Form>
+        <div style={{ width: '100%' }}>
+          <Button margin="8px 0" height="36px" background="none" color="#3A3A3A">
+            Salvar
+          </Button>
+        </div>
+      </LimitedForm>
     </CardPrincipal>
   );
 };

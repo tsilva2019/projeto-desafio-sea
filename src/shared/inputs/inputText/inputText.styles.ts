@@ -5,9 +5,14 @@ export const BoxInput = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LabelInput = styled(Text)`
+  width: 100%;
+  height: auto;
+  max-width: 338px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18.75px;

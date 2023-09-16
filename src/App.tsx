@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 import { PositionHumanStyles } from './modules/funcionarios/components/components.styles';
-import DashboardFuncionarios from './modules/funcionarios/screens/DashboardFuncionarios';
+import AdicionarFuncionario from './modules/funcionarios/screens/AdicionarFuncionarios';
 import Button from './shared/buttons/button/Button';
 import { BoxButtonEtapa } from './shared/buttons/button/button.styles';
 import CardPrincipal from './shared/cards/cardPrincipal/CardPrincipal';
@@ -77,7 +77,7 @@ function App() {
               </CardPrincipal>
             </Col>
             <Col span={15} style={{ display: 'flex', justifyContent: 'end' }}>
-              <DashboardFuncionarios />
+              <AdicionarFuncionario />
             </Col>
           </Row>
           <BoxButtonEtapa>

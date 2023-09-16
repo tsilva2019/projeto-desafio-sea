@@ -30,3 +30,10 @@ export const LimitedItensMenuLateral = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const LimitedForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

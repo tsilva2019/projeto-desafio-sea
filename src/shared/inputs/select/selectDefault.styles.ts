@@ -6,6 +6,7 @@ export const BoxSelect = styled.div`
 `;
 export const SelectDefaultStyled = styled(Select)`
   width: 100%;
+  height: 38;
   color: #4f4f4f;
   border: 1px solid #4fa1c1;
   border-radius: 10px;

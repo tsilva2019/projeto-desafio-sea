@@ -1,5 +1,5 @@
 .container {
-  width: 97%;
+  width: 100%;
   height: auto;
   border: 1px solid #4fa1c1;
   border-radius: 10px;
@@ -31,7 +31,10 @@
 }
 
 .section-epi {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .ant-layout-sider-children {

@@ -13,7 +13,7 @@ interface RadioProps extends RadioPropsAntd {
 const RadioDefault = ({ label, height, background, color, ...props }: RadioProps) => {
   return (
     <BoxInput>
-      <div>{label && <LabelInput>{label}</LabelInput>}</div>
+      {label && <LabelInput>{label}</LabelInput>}
       <Radio.Group>
         <RadioDefaultStyled value={1} style={{ height, background, color }} {...props}>
           Masculino
