@@ -1,9 +1,13 @@
 import { DashOutlined } from '@ant-design/icons';
-import { ConfigProvider } from 'antd';
+import { ButtonProps, ConfigProvider } from 'antd';
 
 import { FloatButtonDashboardStyle } from './floatButtonDashboard.styles';
 
-const FloatButtonDashboard = () => {
+interface FloatButtonProps extends ButtonProps {
+  right?: string;
+  top?: string;
+}
+const FloatButtonDashboard = ({ right, top, ...props }: FloatButtonProps) => {
   return (
     <ConfigProvider
       theme={{
@@ -15,7 +19,7 @@ const FloatButtonDashboard = () => {
         },
       }}
     >
-      <FloatButtonDashboardStyle>
+      <FloatButtonDashboardStyle style={{ right, top }} {...props}>
         <DashOutlined />
       </FloatButtonDashboardStyle>
     </ConfigProvider>

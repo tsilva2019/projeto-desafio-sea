@@ -6,8 +6,8 @@ export const LineTableDashboardStyles = styled.div`
   width: 100%;
   height: 84px;
   background: #edf1f5;
-  border-radius: 10px;
-  padding: 15px 15px;
+  border-radius: 10px 0 0 10px;
+  padding: 15px;
   margin-bottom: 14px;
 `;
 

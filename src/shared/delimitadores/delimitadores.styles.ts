@@ -20,9 +20,7 @@ export const LimitedButtonsDashboard = styled.div`
 export const LimitedLinesDashboard = styled.div`
   width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
   margin: 0 8px;
 `;
 
