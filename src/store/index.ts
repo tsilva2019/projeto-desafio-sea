@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import dashboardReducer from './reducers/dashboardReducer';
+import funcionarioReducer from './reducers/funcionarioReducer';
 
 const store = configureStore({
   reducer: {
     dashboardReducer,
+    funcionarioReducer,
   },
 });
 

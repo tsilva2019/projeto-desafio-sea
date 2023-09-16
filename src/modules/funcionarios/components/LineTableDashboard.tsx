@@ -3,16 +3,22 @@ import { BoxPosition } from '../../../shared/buttons/floatButton/floatButtonDash
 import CampoBgBlue from './campoBgblue';
 import { LineTableDashboardStyles, NomeLineDashboardStyles } from './components.styles';
 
-const LineTableDashboard = () => {
+interface FuncionarioType {
+  nome: string;
+  atividade: string;
+  cargo: string;
+  cpf: string;
+}
+const LineTableDashboard = ({ nome, atividade, cargo, cpf }: FuncionarioType) => {
   return (
     <LineTableDashboardStyles>
       <div>
-        <NomeLineDashboardStyles>Tiago Nascimento da Silva</NomeLineDashboardStyles>
+        <NomeLineDashboardStyles>{nome}</NomeLineDashboardStyles>
       </div>
       <div style={{ width: '100%', display: 'flex' }}>
-        <CampoBgBlue level={5} value="006.902.171-61" />
-        <CampoBgBlue level={5} value="Ativ 00" />
-        <CampoBgBlue level={5} value="Cargo 2" />
+        <CampoBgBlue level={5} value={cpf} />
+        <CampoBgBlue level={5} value={atividade} />
+        <CampoBgBlue level={5} value={cargo} />
       </div>
       <BoxPosition>
         <FloatButtonDashboard />

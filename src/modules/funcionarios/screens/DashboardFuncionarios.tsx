@@ -8,6 +8,7 @@ import {
 import { LabelInput } from '../../../shared/inputs/inputText/inputText.styles';
 import SwitchDefault from '../../../shared/inputs/switch/SwitchDefault';
 import { BoxSwitchDashboard } from '../../../shared/inputs/switch/switchDefault.style';
+import { useAppSelector } from '../../../store/hooks';
 import { useDashboardReducer } from '../../../store/reducers/dashboardReducer/useDashboardReducer';
 import LineTableDashboard from '../components/LineTableDashboard';
 
@@ -17,6 +18,7 @@ const DashboardFuncionarios = () => {
     setEtapaConcluida(checked);
     console.log(etapaConcluida);
   };
+  const { funcionarios } = useAppSelector((state) => state.funcionarioReducer);
   return (
     <CardPrincipal
       title="Funcionário(s)"
@@ -50,7 +52,15 @@ const DashboardFuncionarios = () => {
           </div>
         </LimitedButtonsDashboard>
         <LimitedLinesDashboard>
-          <LineTableDashboard />
+          {funcionarios?.map((funcionario) => (
+            <LineTableDashboard
+              key={funcionario.id}
+              nome={funcionario.nome}
+              atividade={funcionario.atividade}
+              cargo={funcionario.cargo}
+              cpf={funcionario.cpf}
+            />
+          ))}
         </LimitedLinesDashboard>
       </LimitedContentCardStyled>
       <BoxSwitchDashboard>

@@ -3,21 +3,41 @@ import './assets/global.css';
 
 import { Col, Row } from 'antd';
 import { Layout } from 'antd';
+import axios from 'axios';
+import { useEffect } from 'react';
 
+import { PositionHumanStyles } from './modules/funcionarios/components/components.styles';
 import DashboardFuncionarios from './modules/funcionarios/screens/DashboardFuncionarios';
 import Button from './shared/buttons/button/Button';
 import { BoxButtonEtapa } from './shared/buttons/button/button.styles';
 import CardPrincipal from './shared/cards/cardPrincipal/CardPrincipal';
 import { LimitedContentStyled } from './shared/delimitadores/delimitadores.styles';
 import EtapaMenu from './shared/etapaMenu/EtapaMenu';
+import HumanSVG from './shared/icons/HumanSVG';
 import SiderMenu from './shared/siderMenu/SiderMenu';
+import { useFuncionarioReducer } from './store/reducers/funcionarioReducer/useFuncionarioReducer';
 
 const { Header, Content } = Layout;
 
 function App() {
+  const { funcionarios, setFuncionarios } = useFuncionarioReducer();
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/funcionarios')
+      .then((response) => {
+        setFuncionarios(response.data);
+        console.log(funcionarios);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <Layout>
       <SiderMenu />
+      <PositionHumanStyles>
+        <HumanSVG />
+      </PositionHumanStyles>
       <LimitedContentStyled>
         <Header
           style={{

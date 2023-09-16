@@ -8,6 +8,7 @@ export const LineTableDashboardStyles = styled.div`
   background: #edf1f5;
   border-radius: 10px;
   padding: 15px 15px;
+  margin-bottom: 14px;
 `;
 
 export const CampoBgBlueStyles = styled(Paragraph)`
@@ -46,4 +47,13 @@ export const TextEtapaStyles = styled(Text)`
   text-align: center;
   align-items: center;
   color: #4fa1c1;
+`;
+
+export const PositionHumanStyles = styled.div`
+  width: 142px;
+  height: 149px;
+  position: fixed;
+  bottom: 0;
+  left: 112px;
+  z-index: 1000;
 `;
