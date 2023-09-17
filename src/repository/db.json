@@ -9,7 +9,8 @@
       "dt_nascimento": "10041984",
       "cargo": "Cargo1",
       "atividade": "Ativ. 00",
-      "atestado_saude": ""
+      "atestado_saude": "",
+      "status": true
     },
     {
       "id": "2",
@@ -20,7 +21,8 @@
       "dt_nascimento": "10041984",
       "cargo": "Cargo1",
       "atividade": "Ativ. 00",
-      "atestado_saude": ""
+      "atestado_saude": "",
+      "status": true
     },
     {
       "id": "3",
@@ -31,7 +33,8 @@
       "dt_nascimento": "10041984",
       "cargo": "Cargo1",
       "atividade": "Ativ. 00",
-      "atestado_saude": ""
+      "atestado_saude": "",
+      "status": true
     },
     {
       "id": "4",
@@ -42,7 +45,8 @@
       "dt_nascimento": "10041984",
       "cargo": "Cargo1",
       "atividade": "Ativ. 00",
-      "atestado_saude": ""
+      "atestado_saude": "",
+      "status": false
     }
   ],
   "atividade_funcionarios": [

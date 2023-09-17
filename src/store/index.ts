@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import dashboardReducer from './reducers/dashboardReducer';
+import etapaReducer from './reducers/etapaReducer';
+import formFuncionarioReducer from './reducers/formFuncionarioReducer';
 import funcionarioReducer from './reducers/funcionarioReducer';
 
 const store = configureStore({
   reducer: {
-    dashboardReducer,
+    etapaReducer,
     funcionarioReducer,
+    formFuncionarioReducer,
+    dashboardReducer,
   },
 });
 

@@ -11,9 +11,20 @@ import RadioDefault from '../../../shared/inputs/radiogroup/radio/RadioDefault';
 import SelectDefault from '../../../shared/inputs/select/SelectDefault';
 import SwitchDefault from '../../../shared/inputs/switch/SwitchDefault';
 import UploadButton from '../../../shared/inputs/upload/UploadButton';
+import { useDashboardReducer } from '../../../store/reducers/dashboardReducer/useDashboardReducer';
+import { useFormFuncionarioReducer } from '../../../store/reducers/formFuncionarioReducer/useFormFuncionarioReducer';
 
 const AdicionarFuncionario = () => {
   const [fileList, setFileList] = useState('');
+  const { dashboard, setActiveDashboard } = useDashboardReducer();
+  const { formFuncionario, setActiveFormFuncionario } = useFormFuncionarioReducer();
+  const handleAddFuncionario = () => {
+    setActiveDashboard(true);
+    setActiveFormFuncionario(false);
+    console.log('dashboard:', dashboard);
+    console.log('formFuncionario:', formFuncionario);
+  };
+
   return (
     <CardPrincipal title="Adicionar Funcionário" headerBg="#4FA1C1" style={{ maxWidth: '850px' }}>
       <LimitedForm>
@@ -114,7 +125,13 @@ const AdicionarFuncionario = () => {
           </UploadButton>
         </div>
         <div style={{ width: '100%' }}>
-          <Button margin="8px 0" height="36px" background="none" color="#3A3A3A">
+          <Button
+            margin="8px 0"
+            height="36px"
+            background="none"
+            color="#3A3A3A"
+            onClick={handleAddFuncionario}
+          >
             Salvar
           </Button>
         </div>

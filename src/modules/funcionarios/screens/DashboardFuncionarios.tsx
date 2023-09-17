@@ -10,15 +10,37 @@ import SwitchDefault from '../../../shared/inputs/switch/SwitchDefault';
 import { BoxSwitchDashboard } from '../../../shared/inputs/switch/switchDefault.style';
 import { useAppSelector } from '../../../store/hooks';
 import { useDashboardReducer } from '../../../store/reducers/dashboardReducer/useDashboardReducer';
+import { useEtapaReducer } from '../../../store/reducers/etapaReducer/useEtapaReducer';
+import { useFormFuncionarioReducer } from '../../../store/reducers/formFuncionarioReducer/useFormFuncionarioReducer';
+import { useFuncionarioReducer } from '../../../store/reducers/funcionarioReducer/useFuncionarioReducer';
 import LineTableDashboard from '../components/LineTableDashboard';
 
 const DashboardFuncionarios = () => {
-  const { etapaConcluida, setEtapaConcluida } = useDashboardReducer();
+  const { etapaConcluida, setEtapaConcluida } = useEtapaReducer();
+  const { formFuncionario, setActiveFormFuncionario } = useFormFuncionarioReducer();
+  const { dashboard, setActiveDashboard } = useDashboardReducer();
+  const { funcionariosDashboard, setFuncionariosDashboard } = useFuncionarioReducer();
+  const { funcionarios, funcionariosAtivos } = useAppSelector((state) => state.funcionarioReducer);
+
   const handleEtapaConcluida = (checked: boolean) => {
     setEtapaConcluida(checked);
     console.log(etapaConcluida);
   };
-  const { funcionarios } = useAppSelector((state) => state.funcionarioReducer);
+  const handleActiveFormFuncionario = () => {
+    setActiveDashboard(false);
+    setActiveFormFuncionario(true);
+
+    console.log('dashboard:', dashboard);
+    console.log('formFuncionario:', formFuncionario);
+  };
+
+  const handleFiltraFuncionarios = () => {
+    setFuncionariosDashboard(funcionariosAtivos);
+  };
+  const handleLimpaFiltraFuncionarios = () => {
+    setFuncionariosDashboard(funcionarios);
+  };
+
   return (
     <CardPrincipal
       title="Funcionário(s)"
@@ -34,25 +56,32 @@ const DashboardFuncionarios = () => {
             alignItems: 'center',
           }}
         >
-          <Button height="60px" color="#4fa1c1">
+          <Button height="60px" color="#4fa1c1" onClick={handleActiveFormFuncionario}>
             + Adicionar Funcionário
           </Button>
         </div>
 
         <LimitedButtonsDashboard>
-          <Button width="192px" height="32px" color="#4fa1c1">
+          <Button width="192px" height="32px" color="#4fa1c1" onClick={handleFiltraFuncionarios}>
             Ver apenas ativos
           </Button>
 
-          <Button width="192px" height="32px" color="#4fa1c1">
+          <Button
+            width="192px"
+            height="32px"
+            color="#4fa1c1"
+            onClick={handleLimpaFiltraFuncionarios}
+          >
             Limpar filtros
           </Button>
           <div style={{ marginLeft: 'auto' }}>
-            <p>Ativos 2/25</p>
+            <p>
+              Ativos {funcionariosAtivos?.length}/{funcionarios?.length}
+            </p>
           </div>
         </LimitedButtonsDashboard>
         <LimitedLinesDashboard>
-          {funcionarios?.map((funcionario) => (
+          {funcionariosDashboard?.map((funcionario) => (
             <LineTableDashboard
               key={funcionario.id}
               nome={funcionario.nome}

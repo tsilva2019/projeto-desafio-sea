@@ -1,5 +1,5 @@
 import { TextEtapaStyles } from '../../modules/funcionarios/components/components.styles';
-import { useDashboardReducer } from '../../store/reducers/dashboardReducer/useDashboardReducer';
+import { useEtapaReducer } from '../../store/reducers/etapaReducer/useEtapaReducer';
 import ButtonMenuEtapa from '../buttons/buttonMenu/ButtonMenuEtapa';
 import EtapaSVG from '../icons/EtapaSVG';
 import TimeLineSVG from '../icons/TimeLineEtapa';
@@ -10,7 +10,7 @@ import {
 } from './etapaMenu.styles';
 
 const EtapaMenu = () => {
-  const { etapaConcluida } = useDashboardReducer();
+  const { etapaConcluida } = useEtapaReducer();
   return (
     <EtapaMenuStyled>
       <PositionTimeLineEtapaStyled>

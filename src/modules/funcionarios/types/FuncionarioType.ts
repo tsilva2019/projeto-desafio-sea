@@ -8,4 +8,5 @@ export interface FuncionarioType {
   cargo: string;
   atividade: string;
   atestado_saude: string;
+  status: boolean;
 }

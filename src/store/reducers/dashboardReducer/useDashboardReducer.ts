@@ -1,16 +1,16 @@
 import { useDispatch } from 'react-redux';
 
 import { useAppSelector } from '../../hooks';
-import { setEtapaConcluidaAction } from '.';
+import { setActiveDashboardAction } from '.';
 
 export const useDashboardReducer = () => {
   const dispatch = useDispatch();
-  const { etapaConcluida } = useAppSelector((state) => state.dashboardReducer);
-  const setEtapaConcluida = (currentEtapa: boolean) => {
-    dispatch(setEtapaConcluidaAction(currentEtapa));
+  const { dashboard } = useAppSelector((state) => state.dashboardReducer);
+  const setActiveDashboard = (currentDashboard: boolean) => {
+    dispatch(setActiveDashboardAction(currentDashboard));
   };
   return {
-    etapaConcluida,
-    setEtapaConcluida,
+    dashboard,
+    setActiveDashboard,
   };
 };
