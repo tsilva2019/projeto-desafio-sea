@@ -1,10 +1,10 @@
-import { Select } from 'antd';
+import { Select as SelectAntd } from 'antd';
 import styled from 'styled-components';
 
 export const BoxSelect = styled.div`
   width: auto;
 `;
-export const SelectDefaultStyled = styled(Select)`
+export const SelectDefaultStyled = styled(SelectAntd)`
   width: 100%;
   height: 38;
   color: #4f4f4f;

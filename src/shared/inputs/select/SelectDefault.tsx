@@ -1,7 +1,6 @@
-import { SelectProps as SelectPropsAntd } from 'antd';
+import { Select as SelectAntd, SelectProps as SelectPropsAntd } from 'antd';
 
 import { BoxInput, LabelInput } from '../inputText/inputText.styles';
-import { SelectDefaultStyled } from './selectDefault.styles';
 
 interface SelectProps extends SelectPropsAntd {
   label?: string;
@@ -20,11 +19,12 @@ const SelectDefault = ({
   background,
   color,
   optionsSelect,
+  ...props
 }: SelectProps) => {
   return (
     <BoxInput style={{ margin, width }}>
       {label && <LabelInput style={{ width }}>{label}</LabelInput>}
-      <SelectDefaultStyled style={{ width, height, background, color }} options={optionsSelect} />
+      <SelectAntd style={{ width, height, background, color }} {...props} options={optionsSelect} />
     </BoxInput>
   );
 };

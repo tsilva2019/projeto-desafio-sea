@@ -47,6 +47,7 @@ export const TextEtapaStyles = styled(Text)`
   text-align: center;
   align-items: center;
   color: #4fa1c1;
+  text-transform: uppercase;
 `;
 
 export const PositionHumanStyles = styled.div`

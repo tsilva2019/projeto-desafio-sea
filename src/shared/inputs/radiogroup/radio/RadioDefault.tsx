@@ -1,7 +1,6 @@
 import { Radio, RadioProps as RadioPropsAntd } from 'antd';
 
 import { BoxInput, LabelInput } from '../../inputText/inputText.styles';
-import { RadioDefaultStyled } from './radioDefault.styles';
 
 interface RadioProps extends RadioPropsAntd {
   label?: string;
@@ -11,17 +10,14 @@ interface RadioProps extends RadioPropsAntd {
   color?: string;
 }
 const RadioDefault = ({ label, height, background, color, ...props }: RadioProps) => {
+  const options = [
+    { label: 'Masculino', value: 'Masculino' },
+    { label: 'Feminino', value: 'Feminino' },
+  ];
   return (
     <BoxInput>
       {label && <LabelInput>{label}</LabelInput>}
-      <Radio.Group>
-        <RadioDefaultStyled value={1} style={{ height, background, color }} {...props}>
-          Masculino
-        </RadioDefaultStyled>
-        <RadioDefaultStyled value={2} style={{ height, background, color }} {...props}>
-          Feminino
-        </RadioDefaultStyled>
-      </Radio.Group>
+      <Radio.Group options={options} style={{ height, background, color }} {...props} />
     </BoxInput>
   );
 };
